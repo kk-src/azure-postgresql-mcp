@@ -57,8 +57,8 @@ To use the Azure Database for PostgreSQL MCP server with the Claude Desktop app,
     ```json
     {
         "mcpServers": {
-            "azure-postgresql-mcp”: {
-                “command”: “<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
+            "azure-postgresql-mcp": {
+                "command": "<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
                 "args": [
                     "<path to azure_postgresql_mcp.py file>\\ azure_postgresql_mcp.py"
                 ],
@@ -90,7 +90,7 @@ To use this MCP Server with Visual Studio Code, follow these instructions:
             "inputs": [],
             "servers": {
                 "azure-postgresql-mcp": {
-                    "command": “<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
+                    "command": "<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
                     "args": [
                         "<path to azure_postgresql_mcp.py file>\\ azure_postgresql_mcp.py"
                     ],
