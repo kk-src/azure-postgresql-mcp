@@ -10,7 +10,8 @@ Tools:
 - drop_table: Delete a table in your database.
 
 Resources:
-- Tables: Provides schema information and metadata for each table in the database, including table names and owners, column names and data types, storage parameters, and more.
+- Tables: Provides schema information and metadata for each table in the database, including table 
+  names and owners, column names and data types, storage parameters, and more.
 
 
 To run the code using PowerShell, expose the following variables:
