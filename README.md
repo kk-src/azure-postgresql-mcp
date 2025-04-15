@@ -1,8 +1,8 @@
-# Azure Database for PostgreSQL MCP Server
+# Azure Database for PostgreSQL MCP Server (Preview)
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Server that let’s your AI applications and models talk to data hosted in Azure Database for PostgreSQL according to the MCP standard!
 
-This server exposes the following capabilities, which can be invoked or requested by MCP Clients in your AI agents, AI applications or tools like Claude Desktop or Visual Studio Code:
+This server exposes the following capabilities (in preview), which can be invoked or requested by MCP Clients in your AI agents, AI applications or tools like Claude Desktop or Visual Studio Code:
 
 - **Tools**: 
     - **query_data**: Execute read queries to retrieve data from your Azure Database for PostgreSQL databases.
@@ -10,9 +10,9 @@ This server exposes the following capabilities, which can be invoked or requeste
     - **create_table**: Create a new table in your database.
     - **drop_table**: Delete a table in your database.
 - **Resources**:
-    - **Tables**: Provides schema information and metadata for each table in the database, including table names and owners, column names and data types, storage parameters, and more.
+    - **Tables**: Provides schema information and metadata for each table in the database, including column names and data types.
 
-By integrating with this MCP server, you can effortlessly build AI agents and applications that can intelligently and efficiently manage, analyze and make decisions based on your business data in Azure Database for PostgreSQL.
+By integrating with this MCP server, you can effortlessly connect any AI application that supports MCP to your business data in Azure Database for PostgreSQL, providing meaningful context in a standardized, scalable and secure manner.
 
 ## Getting Started
 
@@ -35,12 +35,23 @@ By integrating with this MCP server, you can effortlessly build AI agents and ap
 
 2.	Create a virtual environment:
 
-    ```
+    Windows cmd.exe:
+  	```
     python -m venv azure-postgresql-mcp-venv
-    \azure-postgresql-mcp-venv\Scripts\activate
+    .\azure-postgresql-mcp-venv\Scripts\activate.bat
+    ```
+    Windows Powershell:
+  	```
+    python -m venv azure-postgresql-mcp-venv
+    .\azure-postgresql-mcp-venv\Scripts\Activate.ps1
+    ```
+    Linux and MacOS:
+  	```
+    python -m venv azure-postgresql-mcp-venv
+    source ./azure-postgresql-mcp-venv/bin/activate 
     ```
 
-3. Install the dependencies:
+4. Install the dependencies:
 
     ```
     pip install mcp[cli]
@@ -48,9 +59,16 @@ By integrating with this MCP server, you can effortlessly build AI agents and ap
     ```
 
 
-### Option 1: Use the MCP Server with Claude Desktop
+### Use the MCP Server with Claude Desktop
 
-To use the Azure Database for PostgreSQL MCP server with the Claude Desktop app, follow these instructions:
+Watch the following demo video or read on for detailed instructions.
+
+
+
+https://github.com/user-attachments/assets/327157ef-9c75-414f-8e08-8bbb2b83208c
+
+
+
 1. In the Claude Desktop app, navigate to the “Settings” pane, select the “Developer” tab and click on “Edit Config”.
 2. Open the `claude_desktop_config.json` file and add the following configuration to the "mcpServers" section to configure the Azure Database for PostgreSQL MCP server:
 
@@ -77,9 +95,16 @@ To use the Azure Database for PostgreSQL MCP server with the Claude Desktop app,
 
 You are now all set to start interacting with your data using natural language queries!
 
-### Option 2: Use the MCP Server with Visual Studio Code
+### Use the MCP Server with Visual Studio Code
 
-To use this MCP Server with Visual Studio Code, follow these instructions:
+Watch the following demo video or read on for detailed instructions.
+
+
+
+https://github.com/user-attachments/assets/ed02b4ea-3b76-429a-9558-aef32f1dee68
+
+
+
 1. In Visual Studio Code, navigate to “File”, select “Preferences” and then choose “Settings”.
 2. Search for “MCP” and select “Edit in settings.json”.
 3. Add the following configuration to the “mcp” section of the `settings.json` file:
@@ -112,7 +137,7 @@ To use this MCP Server with Visual Studio Code, follow these instructions:
 You are now all set to start interacting with your data using natural language queries!
 
 ## Contributing
-Contributions are welcome! For more details, see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+The Azure Database for PostgreSQL MCP Server is currently in Preview. As we continue to develop and enhance its features, we welcome all contributions! For more details, see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 ## License
 This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE.md) file.
