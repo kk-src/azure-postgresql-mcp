@@ -95,10 +95,10 @@ To use this MCP Server with Visual Studio Code, follow these instructions:
                         "<path to azure_postgresql_mcp.py file>\\ azure_postgresql_mcp.py"
                     ],
                     "env": {
-                    "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
-                    "PGUSER": "<Your Azure Database for PostgreSQL username>",
-                    "PGPASSWORD": "<Your password>",
-                    "PGDATABASE": "<Your database name>"
+                        "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
+                        "PGUSER": "<Your Azure Database for PostgreSQL username>",
+                        "PGPASSWORD": "<Your password>",
+                        "PGDATABASE": "<Your database name>"
                     }
                 }
             }
