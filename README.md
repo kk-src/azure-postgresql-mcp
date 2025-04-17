@@ -94,6 +94,7 @@ https://github.com/user-attachments/assets/d45da132-46f0-48ac-a1b9-3b1b1b8fd638
         }
     }
     ```
+    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](##using-microsoft-entra-authentication-method).
 3. Restart the Claude Desktop app.
 4. Upon restarting, you should see a hammer icon at the bottom of the input box. Selecting this icon will display the tools provided by the MCP Server.
 
@@ -134,11 +135,32 @@ https://github.com/user-attachments/assets/12328e84-7045-4e3c-beab-4936d7a20c21
         }
     }
     ```
+    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](##using-microsoft-entra-authentication-method).
 4. Select the “Copilot” status icon in the upper-right corner to open the GitHub Copilot Chat window. 
 5. Choose “Agent mode” from the dropdown at the bottom of the chat input box.
 5. Click on “Select Tools” (hammer icon) to view the Tools exposed by the MCP Server.
 
 You are now all set to start interacting with your data using natural language queries through VS Code!
+
+## Using Microsoft Entra authentication method
+
+If you prefer to use Microsoft Entra authentication method to connect your MCP Server to Azure Database for PostgreSQL, update the MCP Server configuration in `claude_desktop_config.json` file \(Claude Desktop\) and `settings.json` \(Visual Studio Code\) with the following code:
+
+```json
+"azure-postgresql-mcp": {
+    "command": "<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
+    "args": [
+        "<path to azure_postgresql_mcp.py file>\\azure_postgresql_mcp.py"
+    ],
+    "env": {
+        "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
+        "PGUSER": "<Your Azure Database for PostgreSQL username>",
+        "AZURE_USE_AAD": "true",
+        "AZURE_SUBSCRIPTION_ID": "<Your Azure subscription ID>",
+        "AZURE_RESOURCE_GROUP": "<Your Resource Group that contains the Azure Database for PostgreSQL instance>",
+    }
+}
+```
 
 ## Contributing
 The Azure Database for PostgreSQL MCP Server is currently in Preview. As we continue to develop and enhance its features, we welcome all contributions! For more details, see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
