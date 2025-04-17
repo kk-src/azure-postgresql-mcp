@@ -94,7 +94,7 @@ https://github.com/user-attachments/assets/d45da132-46f0-48ac-a1b9-3b1b1b8fd638
         }
     }
     ```
-    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](##using-microsoft-entra-authentication-method).
+    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](#using-microsoft-entra-authentication-method).
 3. Restart the Claude Desktop app.
 4. Upon restarting, you should see a hammer icon at the bottom of the input box. Selecting this icon will display the tools provided by the MCP Server.
 
@@ -135,7 +135,7 @@ https://github.com/user-attachments/assets/12328e84-7045-4e3c-beab-4936d7a20c21
         }
     }
     ```
-    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](##using-microsoft-entra-authentication-method).
+    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](#using-microsoft-entra-authentication-method).
 4. Select the “Copilot” status icon in the upper-right corner to open the GitHub Copilot Chat window. 
 5. Choose “Agent mode” from the dropdown at the bottom of the chat input box.
 5. Click on “Select Tools” (hammer icon) to view the Tools exposed by the MCP Server.
