@@ -1,18 +1,20 @@
 # Azure Database for PostgreSQL MCP Server (Preview)
 
-A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Server that let’s your AI applications and models talk to data hosted in Azure Database for PostgreSQL according to the MCP standard!
+A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Server that let’s your AI models talk to data hosted in Azure Database for PostgreSQL according to the MCP standard! 
 
-This server exposes the following capabilities (in preview), which can be invoked or requested by MCP Clients in your AI agents, AI applications or tools like Claude Desktop or Visual Studio Code:
+By utilizing this server, you can effortlessly connect any AI application that supports MCP to your PostgreSQL flexible server (using either PostgreSQL or Microsoft Entra authentication methods), enabling you to provide your business data as meaningful context in a standardized and secure manner.
 
-- **Tools**: 
-    - **query_data**: Execute read queries to retrieve data from your Azure Database for PostgreSQL databases.
-    - **update_values**: Insert or update records in your database.
-    - **create_table**: Create a new table in your database.
-    - **drop_table**: Delete a table in your database.
-- **Resources**:
-    - **Tables**: Provides schema information and metadata for each table in the database, including column names and data types.
+This server exposes the following tools, which can be invoked by MCP Clients in your AI agents, AI applications or tools like Claude Desktop and Visual Studio Code:
 
-By integrating with this MCP server, you can effortlessly connect any AI application that supports MCP to your business data in Azure Database for PostgreSQL, providing meaningful context in a standardized, scalable and secure manner.
+- **List all databases** in your Azure Database for MySQL flexible server instance.
+- **List all tables** in a database along with their schema information.
+- **Execute read queries** to retrieve data from your database.
+- **Insert or update records** in your database.
+- **Create a new table or drop an existing table** in your database.
+- **List Azure Database for PostgreSQL flexible server configuration**, including its PostgreSQL version, and compute and storage configurations. *
+- Retrieve specific **server parameter values.** *
+  
+_*Available when using Microsoft Entra authentication method_
 
 ## Getting Started
 
@@ -56,6 +58,8 @@ By integrating with this MCP server, you can effortlessly connect any AI applica
     ```
     pip install mcp[cli]
     pip install psycopg[binary]
+    pip install azure-mgmt-postgresqlflexibleservers
+    pip install azure-identity
     ```
 
 
@@ -65,7 +69,7 @@ Watch the following demo video or read on for detailed instructions.
 
 
 
-https://github.com/user-attachments/assets/327157ef-9c75-414f-8e08-8bbb2b83208c
+https://github.com/user-attachments/assets/d45da132-46f0-48ac-a1b9-3b1b1b8fd638
 
 
 
@@ -78,7 +82,7 @@ https://github.com/user-attachments/assets/327157ef-9c75-414f-8e08-8bbb2b83208c
             "azure-postgresql-mcp": {
                 "command": "<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
                 "args": [
-                    "<path to azure_postgresql_mcp.py file>\\ azure_postgresql_mcp.py"
+                    "<path to azure_postgresql_mcp.py file>\\azure_postgresql_mcp.py"
                 ],
                 "env": {
                     "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
@@ -91,9 +95,9 @@ https://github.com/user-attachments/assets/327157ef-9c75-414f-8e08-8bbb2b83208c
     }
     ```
 3. Restart the Claude Desktop app.
-4. Upon restarting, you should see a hammer icon and an attach icon at the bottom of the input box. Selecting these icons will display the tools and resources provided by the MCP Server.
+4. Upon restarting, you should see a hammer icon at the bottom of the input box. Selecting this icon will display the tools provided by the MCP Server.
 
-You are now all set to start interacting with your data using natural language queries!
+You are now all set to start interacting with your data using natural language queries through Claude Desktop!
 
 ### Use the MCP Server with Visual Studio Code
 
@@ -101,7 +105,7 @@ Watch the following demo video or read on for detailed instructions.
 
 
 
-https://github.com/user-attachments/assets/ed02b4ea-3b76-429a-9558-aef32f1dee68
+https://github.com/user-attachments/assets/12328e84-7045-4e3c-beab-4936d7a20c21
 
 
 
@@ -117,7 +121,7 @@ https://github.com/user-attachments/assets/ed02b4ea-3b76-429a-9558-aef32f1dee68
                 "azure-postgresql-mcp": {
                     "command": "<path to the virtual environment>\\azure-postgresql-mcp-venv\\Scripts\\python",
                     "args": [
-                        "<path to azure_postgresql_mcp.py file>\\ azure_postgresql_mcp.py"
+                        "<path to azure_postgresql_mcp.py file>\\azure_postgresql_mcp.py"
                     ],
                     "env": {
                         "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
@@ -134,7 +138,7 @@ https://github.com/user-attachments/assets/ed02b4ea-3b76-429a-9558-aef32f1dee68
 5. Choose “Agent mode” from the dropdown at the bottom of the chat input box.
 5. Click on “Select Tools” (hammer icon) to view the Tools exposed by the MCP Server.
 
-You are now all set to start interacting with your data using natural language queries!
+You are now all set to start interacting with your data using natural language queries through VS Code!
 
 ## Contributing
 The Azure Database for PostgreSQL MCP Server is currently in Preview. As we continue to develop and enhance its features, we welcome all contributions! For more details, see the [CONTRIBUTING.md](CONTRIBUTING.md) file.
