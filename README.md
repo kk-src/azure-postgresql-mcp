@@ -2,7 +2,7 @@
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io/introduction) Server that let’s your AI models talk to data hosted in Azure Database for PostgreSQL according to the MCP standard! 
 
-By utilizing this server, you can effortlessly connect any AI application that supports MCP to your PostgreSQL flexible server (using either PostgreSQL or Microsoft Entra authentication methods), enabling you to provide your business data as meaningful context in a standardized and secure manner.
+By utilizing this server, you can effortlessly connect any AI application that supports MCP to your PostgreSQL flexible server (using either PostgreSQL password-based authentication or Microsoft Entra authentication methods), enabling you to provide your business data as meaningful context in a standardized and secure manner.
 
 This server exposes the following tools, which can be invoked by MCP Clients in your AI agents, AI applications or tools like Claude Desktop and Visual Studio Code:
 
@@ -94,7 +94,7 @@ https://github.com/user-attachments/assets/d45da132-46f0-48ac-a1b9-3b1b1b8fd638
         }
     }
     ```
-    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](#using-microsoft-entra-authentication-method).
+    **Note**: Here, we use password-based authentication to connect the MCP Server to Azure Database for PostgreSQL for testing purposes only. However, we recommend using Microsoft Entra authentication. Please refer to [these instructions](#using-microsoft-entra-authentication-method) for guidance.
 3. Restart the Claude Desktop app.
 4. Upon restarting, you should see a hammer icon at the bottom of the input box. Selecting this icon will display the tools provided by the MCP Server.
 
@@ -135,7 +135,7 @@ https://github.com/user-attachments/assets/12328e84-7045-4e3c-beab-4936d7a20c21
         }
     }
     ```
-    Note: Here, the MCP Server connects to Azure Database for PostgreSQL using PostgreSQL authentication. To connect using Microsoft Entra authentication instead, refer to [these instructions](#using-microsoft-entra-authentication-method).
+    **Note**: Here, we use password-based authentication to connect the MCP Server to Azure Database for PostgreSQL for testing purposes only. However, we recommend using Microsoft Entra authentication. Please refer to [these instructions](#using-microsoft-entra-authentication-method) for guidance.
 4. Select the “Copilot” status icon in the upper-right corner to open the GitHub Copilot Chat window. 
 5. Choose “Agent mode” from the dropdown at the bottom of the chat input box.
 5. Click on “Select Tools” (hammer icon) to view the Tools exposed by the MCP Server.
@@ -144,7 +144,7 @@ You are now all set to start interacting with your data using natural language q
 
 ## Using Microsoft Entra authentication method
 
-If you prefer to use Microsoft Entra authentication method to connect your MCP Server to Azure Database for PostgreSQL, update the MCP Server configuration in `claude_desktop_config.json` file \(Claude Desktop\) and `settings.json` \(Visual Studio Code\) with the following code:
+To Microsoft Entra authentication method (recommended) to connect your MCP Server to Azure Database for PostgreSQL, update the MCP Server configuration in `claude_desktop_config.json` file \(Claude Desktop\) and `settings.json` \(Visual Studio Code\) with the following code:
 
 ```json
 "azure-postgresql-mcp": {
