@@ -6,7 +6,7 @@ By utilizing this server, you can effortlessly connect any AI application that s
 
 This server exposes the following tools, which can be invoked by MCP Clients in your AI agents, AI applications or tools like Claude Desktop and Visual Studio Code:
 
-- **List all databases** in your Azure Database for MySQL flexible server instance.
+- **List all databases** in your Azure Database for PostgreSQL flexible server instance.
 - **List all tables** in a database along with their schema information.
 - **Execute read queries** to retrieve data from your database.
 - **Insert or update records** in your database.
