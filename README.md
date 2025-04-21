@@ -154,10 +154,10 @@ To Microsoft Entra authentication method (recommended) to connect your MCP Serve
     ],
     "env": {
         "PGHOST": "<Fully qualified name of your Azure Database for PostgreSQL instance>",
-        "PGUSER": "<Your Azure Database for PostgreSQL username>",
+        "PGUSER": "<Your Microsoft Entra ID username or the resource name of your Azure resource with a system-assigned identity or the identity name>",
         "AZURE_USE_AAD": "True",
         "AZURE_SUBSCRIPTION_ID": "<Your Azure subscription ID>",
-        "AZURE_RESOURCE_GROUP": "<Your Resource Group that contains the Azure Database for PostgreSQL instance>",
+        "AZURE_RESOURCE_GROUP": "<Your Resource Group that contains the Azure Database for PostgreSQL instance>"
     }
 }
 ```
