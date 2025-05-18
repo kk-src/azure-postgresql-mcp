@@ -104,7 +104,7 @@ class AzurePostgreSQLMCP:
         """Internal function which gets the list of all databases in a server instance."""
         try:
             with psycopg.connect(
-                f"host={self.dbhost} user={self.dbuser} dbname='postgres' password={self.password}"
+                f"host={self.dbhost} user={self.dbuser} dbname='postgres' password={self.password} sslmode=require"
             ) as conn:
                 with conn.cursor() as cur:
                     cur.execute(
@@ -132,7 +132,7 @@ class AzurePostgreSQLMCP:
 
     def get_connection_uri(self, dbname: str) -> str:
         """Construct URI for connection."""
-        return f"host={self.dbhost} dbname={dbname} user={self.dbuser} password={self.password}"
+        return f"host={self.dbhost} dbname={dbname} user={self.dbuser} password={self.password} sslmode=require"
 
     def get_schemas(self, database: str):
         """Gets schemas of all the tables."""
